@@ -1,0 +1,85 @@
+{# This template is the main template to be extended by all other pages #}
+<!DOCTYPE html>
+<html>
+<head>
+    {% block head %}
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- Latest compiled + minified Bootstrap via CDN -->
+        <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css">
+        <link rel="stylesheet" href="{{ app.request.baseUrl }}/resources/css/qa-website-theme.css">
+        <link rel="stylesheet" href="{{ app.request.baseUrl }}/resources/css/stickyfooter.css">
+        {% block css %}{% endblock %}
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
+    {% endblock %}
+    <title>{% block title %}Chula{% endblock %}</title>
+</head>
+<body>
+<div class="wrapper">
+    <div class="box">
+        <div class="row">
+
+            <!-- sidebar -->
+            <div class="column col-sm-3" id="sidebar">
+                <a class="logo" href="#">QA</a>
+                <ul class="nav">
+                    <li class="active"><a href="/">Home</a>
+                    </li>
+                    <li><a href="{{ app.request.baseUrl }}/about">About me</a>
+                    </li>
+                </ul>
+                {% block footer %}
+
+                    <ul class="nav" id="sidebar-social">
+                        <li>
+                            <a href="https://twitter.com/QasAshraf">Twitter</a>
+                        </li>
+                        <li>
+                            <a href="https://plus.google.com/+QasAshraf/">Google+</a>
+                        </li>
+                        <li>
+                            <a href="https://github.com/QasAshraf">GitHub</a>
+                        </li>
+                        <li>
+                            <a href="https://www.linkedin.com/in/qasimashraf">LinkedIn</a>
+                        </li>
+                    </ul>
+
+                    <ul class="nav hidden-xs" id="sidebar-footer">
+                        <li>
+                            <b>Powered by <a href="https://github.com/stephcook22/chula/">Chula</a>. Theme based on <a
+                                        href="http://www.bootply.com">Basis.</a></b>
+                        </li>
+                    </ul>
+                {% endblock %}
+            </div>
+            <!-- /sidebar -->
+
+            <!-- content -->
+            <div class="column col-sm-9" id="main">
+                <div class="padding">
+                    {% block content %}{% endblock %}
+                </div>
+                <!-- /padding -->
+            </div>
+            <!-- /main -->
+
+
+        </div>
+    </div>
+</div>
+
+
+{% block scripts %}
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="http://code.jquery.com/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+
+    <!-- Latest compiled and minified JavaScript for Bootstrap-->
+    <script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+{% endblock %}
+</body>
+</html>

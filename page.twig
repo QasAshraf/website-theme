@@ -1,0 +1,9 @@
+{% extends "base.twig" %}
+{% block title %}{{ slug }}{% endblock %}
+{% block content %}
+    <div>
+    <h3>{{ slug }}</h3>
+    <small class="text-muted">{{ date|date }}</small>
+    <p>{{ content | raw }}</p>
+    </div>
+{% endblock %}
