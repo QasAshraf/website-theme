@@ -10,7 +10,7 @@
             {% if page.slug != 'about' %}
                 <div class="row">
                     <div class="col-sm-10">
-                        <h3>{{ page.slug }}</h3>
+                        <h3><a href="{{ page.slug }}">{{ page.slug }}</a></h3>
                         <small class="text-muted">{{ page.time|date }}</small>
                         <!-- labels - for tags later
                         <h4><span class="label label-default">techvisually.com</span></h4>
